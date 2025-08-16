@@ -1,0 +1,10 @@
+.head {
+    margin: 10px;
+    text-align: center;
+}
+
+.btn-styl {
+    display: block;
+    margin: 20px auto;
+    max-width: 10%;
+}
