@@ -12,7 +12,8 @@ function Product(props) {
     if (window.confirm(`Are you sure you want to delete "${product.title}"?`)) {
       try {
         await axios.delete(`${API_URL}${product.id}`);
-        if (onDelete) onDelete(product.id);
+        if (onDelete) 
+          onDelete(product.id);
       } catch (err) {
         console.error("Error deleting product:", err);
       }
