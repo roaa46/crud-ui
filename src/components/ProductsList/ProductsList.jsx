@@ -19,12 +19,19 @@ function ProductList() {
     };
 
     fetchProducts();
-}, []);
+    }, []);
 
 
-    const handleDelete = (id) => {
-    setProducts(products.filter((p) => p.id !== id));
-  };
+    const handleDelete = async (id) => {
+        await axios.delete(`${API_URL}/${id}`)
+        .then( () => {
+            setProducts(products.filter((p) => p.id !== id));
+        })
+        .catch (err => {
+        console.error("Error deleting product:", err);
+        })
+    }
+
 
     return(
         <>
